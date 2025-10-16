@@ -10,7 +10,16 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <NavigationContainer>
+      <NavigationContainer
+        linking={{
+          prefixes: [],
+          config: {
+            screens: {
+              Login: 'login',
+              Dashboard: 'dashboard',
+            },
+          },
+        }}>
         <Stack.Navigator
           initialRouteName="Login"
           screenOptions={{ headerShown: false }}>
